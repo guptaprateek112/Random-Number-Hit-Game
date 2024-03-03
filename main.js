@@ -19,8 +19,9 @@ function getNewHit()
 function makeBubble()
 {
     var clutter = "";
-
-for(var i = 1; i <= 128 ; i++)
+if(window.matchMedia("(max-width: 700px)").matches)
+{
+    for(var i = 1; i <= 114 ; i++)
 {
     var rn = Math.floor(Math.random()*10);
     clutter += `<div class="bubble">${rn}</div>`;
@@ -28,6 +29,19 @@ for(var i = 1; i <= 128 ; i++)
 }
 
 document.querySelector('#pbtm').innerHTML = clutter;
+}
+else
+{
+    for(var i = 1; i <= 120 ; i++)
+{
+    var rn = Math.floor(Math.random()*10);
+    clutter += `<div class="bubble">${rn}</div>`;
+
+}
+
+document.querySelector('#pbtm').innerHTML = clutter;
+}
+
 }
 
 function runTimer()
